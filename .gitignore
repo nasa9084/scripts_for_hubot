@@ -1,0 +1,11 @@
+node_modules
+.DS_Store*
+.hubot_history
+/.editorconfig
+/Procfile
+/bin/hubot
+/bin/hubot.cmd
+/external-scripts.json
+/hubot-scripts.json
+/package.json
+/scripts/example.coffee
