@@ -58,6 +58,7 @@ module.exports = (robot) ->
         snd = msg.match[2]
         thd = msg.match[3]
 
+        #analects script
         if fst=="remove" and snd? and thd?
             # remove witt of user
             username = snd
