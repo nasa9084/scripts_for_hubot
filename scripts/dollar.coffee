@@ -10,11 +10,9 @@
 #   $<username> - Say witt of <username> analects
 #   $remove <username> <witt> - remove <witt> from <username> analects
 #   $clear <username> - delete <username> analects
-#   $version - return version of scripts_for_hubot
 
 module.exports = (robot) ->
     # statics
-    VERSION = 201607120057
     KEY_ANALECTS = 'analects'
 
     # functions
@@ -75,11 +73,7 @@ module.exports = (robot) ->
         snd = msg.match[2]
         thd = msg.match[3]
 
-        if fst=="version" and !snd? and !thd?
-            # version
-            msg.send VERSION
-
-        else if fst=="shuffle" and snd? and !thd?
+        if fst=="shuffle" and snd? and !thd?
             # shuffle the word
             word = snd
             msg.send shuffleString(word)
