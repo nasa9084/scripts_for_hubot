@@ -5,6 +5,7 @@
 #   hubot-redis-brain
 #
 # Commands:
+#   $shuffle <word> - Shuffle <word> and say it
 #   $<username> <witt> - Add <witt> to <username> analects
 #   $<username> - Say witt of <username> analects
 #   $remove <username> <witt> - remove <witt> from <username> analects
@@ -16,6 +17,20 @@ module.exports = (robot) ->
 
     # functions
     #
+    # Shuffle Character of Word
+    shuffleString = (word) ->
+        arr = word.split('')
+        i = arr.length
+        if i is 0
+            return false
+        while --i
+            j = Math.floor Math.random() * (i+1)
+            tmpi = arr[i]
+            tmpj = arr[j]
+            arr[i] = tmpj
+            arr[j] = tmpi
+        return arr.join('')
+
     # Analects functions
     getAnalects = () ->
         return robot.brain.get(KEY_ANALECTS) or {}
@@ -58,8 +73,13 @@ module.exports = (robot) ->
         snd = msg.match[2]
         thd = msg.match[3]
 
+        if fst=="shuffle" and snd? and !thd?
+            # shuffle the word
+            word = snd
+            msg.send shuffleString(word)
+
         #analects script
-        if fst=="remove" and snd? and thd?
+        else if fst=="remove" and snd? and thd?
             # remove witt of user
             username = snd
             witt = thd
