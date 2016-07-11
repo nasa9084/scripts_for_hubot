@@ -53,7 +53,7 @@ module.exports = (robot) ->
             return "#{username}語録に「#{witt}」は存在しません。"
 
     # main part
-    robot.hear /^\$(\w+)\s?(\w+)?\s?(\w+)?$/i, (msg) ->
+    robot.hear /^\$([^ ]+)\s?([^ ]+)?\s?([^ ]+)?$/i, (msg) ->
         fst = msg.match[1]
         snd = msg.match[2]
         thd = msg.match[3]
