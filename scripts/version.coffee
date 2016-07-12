@@ -11,5 +11,8 @@ module.exports = (robot) ->
     # statics
     VERSION = "201607130141"
 
+    # functions
+
+
     robot.hear /^version$/i, (msg) ->
         msg.send VERSION
