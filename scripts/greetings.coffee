@@ -5,6 +5,12 @@
 #   nasa9084
 
 module.exports = (robot) ->
+    robot.enter (msg) ->
+        msg.send 'HELLO, NEW USER!'
+
+    robot.leave (msg) ->
+        msg.send 'GOOD BYE...'
+
     robot.hear /寝る/, (msg) ->
         msg.send msg.random [
             "おやすみ",
