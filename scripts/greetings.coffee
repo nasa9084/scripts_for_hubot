@@ -11,7 +11,7 @@ module.exports = (robot) ->
     robot.leave (msg) ->
         msg.send 'GOOD BYE...'
 
-    robot.hear /寝る/, (msg) ->
+    robot.hear /(ね|寝)(る|ます)|(おやすみ)(なさい)?/, (msg) ->
         msg.send msg.random [
             "おやすみ",
             "オヤスミ_〆(・∇・*)",
@@ -21,7 +21,7 @@ module.exports = (robot) ->
             "(o･д･)尸~~おやすみ～♪"
         ]
 
-    robot.hear /起きた/, (msg) ->
+    robot.hear /(起|お)き(まし)?た|おはよう(ございます)?/, (msg) ->
         msg.send msg.random [
             "ｵｯ☆ o(≧▽≦)o ﾊｧｧｧｧｧｧ♪",
             "(*´・ω・)ノはよー",
