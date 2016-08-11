@@ -1,7 +1,7 @@
 # Description
 #
 # Commands
-#  hubot choice from <list> - choose one of <list> at random
+#  hubot choose from <list> - choose one of <list> at random
 #  hubot <list>から選んで - ランダムに<list>から一つ選択します
 #
 # Dependencies
