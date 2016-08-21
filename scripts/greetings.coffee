@@ -5,8 +5,17 @@
 #   nasa9084
 
 module.exports = (robot) ->
+    getChannels = () ->
+        channels = {}
+        for k,v of robot.adapter.client.rtm.dataStore.channels
+            channels[k] = v.name
+        return channels
+
     robot.enter (msg) ->
-        msg.send 'HELLO, NEW USER!'
+        channels = getChannels()
+        entered_channel = msg.message.room
+        if channels[entered_channel] == 'random'
+            msg.send 'HELLO, NEW USER!'
 
     robot.leave (msg) ->
         msg.send 'GOOD BYE...'
