@@ -9,7 +9,7 @@
 
 module.exports = (robot) ->
     # statics
-    VERSION = "201608111644"
+    VERSION = "201608220040"
 
     # functions
 
