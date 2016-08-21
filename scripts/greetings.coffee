@@ -14,7 +14,7 @@ module.exports = (robot) ->
     robot.enter (msg) ->
         channels = getChannels()
         entered_channel = msg.message.room
-        if channels[entered_channel] == 'random'
+        if channels[entered_channel].match(/_?random/)
             msg.send 'HELLO, NEW USER!'
 
     robot.leave (msg) ->
