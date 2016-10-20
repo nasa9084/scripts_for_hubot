@@ -19,7 +19,7 @@ module.exports = (robot) ->
         return new_score
 
     # Level Increment
-    robot.hear /([a-zA-Z0-9]+)\+\+(.*)/, (msg) ->
+    robot.hear /^([a-zA-Z0-9]+)\+\+(.*)/, (msg) ->
         name = msg.match[1]
         reason = msg.match[2]
         new_score = changeScore(name, 1)
@@ -36,7 +36,7 @@ module.exports = (robot) ->
             msg.send msg.random INCREMENT_MESSAGES
 
     # Level Decrement
-    robot.hear /([a-zA-Z0-9]+)--(.*)/, (msg) ->
+    robot.hear /^([a-zA-Z0-9]+)--(.*)/, (msg) ->
         name = msg.match[1]
         reason = msg.match[2]
         new_score = changeScore(name, -1)
